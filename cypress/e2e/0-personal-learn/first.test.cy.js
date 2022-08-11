@@ -6,7 +6,7 @@ describe('My First Test', () => {
         //untuk membuka website yang akan ditest(Visit a page)
         cy.visit('https://example.cypress.io')
         
-        cy.pause()
+    
 
         //permintaan untuk mencari sebuah elemen(Query for an element)
         cy.get('h1').contains('Kitchen Sink')
