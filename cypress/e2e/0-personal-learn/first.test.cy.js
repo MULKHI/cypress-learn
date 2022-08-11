@@ -11,22 +11,31 @@ describe('My First Test', () => {
         cy.get('h1').contains('Kitchen Sink')
 
         //perintah untuk mengklik element(Click an element)
-        cy.contains('get').click()
+        cy.contains('type').click()
         
         //membuat pernyataan bahwa sudah memasuki halaman yang benar(Make an assertion)
-        cy.url().should('include', '/commands/querying')
+        cy.url().should('include', '/commands/actions')
 
-        //melakukan input pada kolom nama,email dan password
-        cy.get('#inputName')
-            .type('Putra')
-            
-        cy.get('#inputEmail')
+        //melakukan input pada kolom email, password, fullname,descripion adn couponCode
+        cy.get('#email1')
             .type('fake@email.com')
             .should('have.value', 'fake@email.com')
 
-        cy.get('#inputPassword')
+        cy.get('#password1')
             .type('password123')
             .should('have.value', 'password123')
+
+        cy.get('#fullName1')
+            .type('Mulkhi Putra Lesmana')
+
+        cy.get('#description')
+            .type("this my first time using Cypress and it's so pretty good I like it")
+
+        cy.get('#couponCode1')
+            .type('666999')
+
+
+        
     });
 
 });
